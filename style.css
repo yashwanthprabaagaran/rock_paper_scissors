@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  background-color: pink;
+  height: 74vh;
+}
+header > .containment > h1 {
+  text-transform: capitalize;
+  font-family: sans-serif;
+  color: white;
+}
+
+img {
+  max-width: 100px;
+}
+.img {
+  display: flex;
+  flex: 1;
+  gap: 30px;
+}
+.paper {
+  min-width: 100px;
+}
+
+button {
+  background-color: transparent;
+  color: white;
+  text-transform: capitalize;
+  text-decoration: solid;
+  font-size: large;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 20px 40px;
+  margin: 5px 10px;
+}
+.button {
+  padding-bottom: 30px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15vw;
+}
+
+article .article_container > div > h1 {
+  text-transform: capitalize;
+  font-family: sans-serif;
+}
+
+footer {
+  margin: 0;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-color: skyblue;
+  text-align: center;
+}
