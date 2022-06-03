@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="text"><p>PICK YOUR CHOICE</p></div>
+      <div class="left">
+        <div class="starIcons">
+          <i id="p1" class="fa-regular fa-star fa-lg"></i>
+          <i id="p2" class="fa-regular fa-star fa-lg"></i>
+          <i id="p3" class="fa-regular fa-star fa-lg"></i>
+        </div>
+        <div class="cards">
+          <div data-option="rock" id="sleep" class="card">
+            <img src="./img/rock.svg" alt="" />
+          </div>
+          <div data-option="paper" class="card">
+            <img src="./img/paper.svg" alt="" />
+          </div>
+          <div data-option="scissors" class="card">
+            <img class="img" src="./img/scissors-svgrepo-com.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="starIcons">
+          <i id="c1" class="fa-regular fa-star fa-lg"></i>
+          <i id="c2" class="fa-regular fa-star fa-lg"></i>
+          <i id="c3" class="fa-regular fa-star fa-lg"></i>
+        </div>
+        <div class="cards">
+          <div class="computerCard">
+            <!-- <img
+              class="no choice"
+              src="./img/question-mark-support-svgrepo-com.svg"
+              alt=""
+            /> -->
+          </div>
+        </div>
+      </div>
+      <p id="textArea"></p>
+    </div>
+  </body>
+</html>
