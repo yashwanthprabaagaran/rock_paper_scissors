@@ -1,9 +1,25 @@
-// const startBtn = document.querySelector("button");
-// const images = document.querySelectorAll("img");
-// images.forEach((e) => {
-//   e.addEventListener("click", () => console.log("hi"));
-// });
-// startBtn.addEventListener("click", (e) => console.log(e));
+const listener = document.querySelectorAll(".card");
+const computerCard = document.querySelector(".computerCard");
+const textForWinner = document.getElementById("textArea");
+const imgTag = document.createElement("img");
+
+let computerCount = 0,
+  playerCount = 0;
+
+//NOTE DOM creation of computer side image in the website
+const images = {
+  rock: "./img/rock.svg",
+  paper: "./img/paper.svg",
+  scissors: "./img/scissors-svgrepo-com.svg",
+};
+
+//NOTE computer side play and return a rondom arr value.
+function computerPlay() {
+  let arr = ["rock", "paper", "scissors"];
+  return arr[Math.floor(Math.random() * 2) + 1];
+}
+
+//NOTE this function is return string (i.e) who won and loses the game.
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) return "your draw!";
   if (
@@ -20,49 +36,31 @@ function playRound(playerSelection, computerSelection) {
     return ` you win! ${playerSelection} beats ${computerSelection}`;
 }
 
-let colorChange = (icon) => icon.classList.toggle("fa-s");
+//NOTE This function goes throw the every instance of the event and make changes
 
-function computerPlay() {
-  let arr = ["rock", "paper", "scissors"];
-  return arr[Math.floor(Math.random() * 2) + 1];
-}
-const imgTag = document.createElement("img");
-const images = {
-  rock: "./img/rock.svg",
-  paper: "./img/paper.svg",
-  scissors: "./img/scissors-svgrepo-com.svg",
-};
-const listener = document.querySelectorAll(".card");
-const computerCard = document.querySelector(".computerCard");
-const textForWinner = document.getElementById("textArea");
-
-let computerCount = 0,
-  playerCount = 0;
 listener.forEach((e) => {
   e.addEventListener("click", () => {
     const computerSidePlay = computerPlay();
+
     imgTag.setAttribute("class", "after choice");
     imgTag.setAttribute("src", images[`${computerSidePlay}`]);
     // textAns.innerText = textAnswer;
     computerCard.appendChild(imgTag);
+
     const textFile = playRound(e.getAttribute("data-option"), computerSidePlay);
     if (textFile.includes("you win!")) {
       playerCount += 1;
       const playerIds = document.getElementById(`p${playerCount}`);
       playerIds.classList.add("fa-solid");
     }
+
     if (textFile.includes("you lose!")) {
       computerCount += 1;
       const computerIds = document.getElementById(`c${computerCount}`);
       computerIds.classList.add("fa-solid");
     }
-    if (computerCount == 3) {
-      textForWinner.textContent = "You lose!";
-    }
-    if (playerCount == 3) {
-      textForWinner.textContent = "You win!";
-    }
 
-    console.log(playerCount + " " + computerCount);
+    if (computerCount == 3) textForWinner.textContent = "You lose!";
+    if (playerCount == 3) textForWinner.textContent = "You win!";
   });
 });
